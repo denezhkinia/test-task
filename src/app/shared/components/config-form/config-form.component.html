@@ -1,0 +1,32 @@
+<form [formGroup]="configForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Timer, ms</mat-label>
+    <input type="number" min="0" matInput formControlName="timer" numbersOnly/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Array size</mat-label>
+    <input type="number" min="0" matInput formControlName="size" numbersOnly/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Additional array IDs</mat-label>
+    <mat-chip-grid #idGrid aria-label="Enter ID" formControlName="ids">
+      <mat-chip-row
+        *ngFor="let id of configForm.get('ids').value"
+        (removed)="removeId(id)"
+      >
+        {{ id }}
+        <button matChipRemove aria-label="'remove ' + ID">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+    <input
+      placeholder="New ID..."
+      [matChipInputFor]="idGrid"
+      (matChipInputTokenEnd)="addId($event)"
+    />
+  </mat-form-field>
+</form>
+
