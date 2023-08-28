@@ -5,7 +5,7 @@ import { TableData } from '../../models/table-data';
 @Injectable({
   providedIn: 'root',
 })
-export class PseudoSocketService {
+export class PseudoSocketMockService {
   private messagesSubject = new Subject<TableData[]>();
   private worker: Worker;
   private intervalId: any;
@@ -53,7 +53,7 @@ export class PseudoSocketService {
    */
   private initWorker() {
     if (typeof Worker !== 'undefined') {
-      this.worker = new Worker(new URL('../workers/data-generator.worker', import.meta.url));
+      this.worker = new Worker(new URL('../workers/data-generator.worker', ''));
 
       this.worker.onmessage = ({ data }) => {
         this.sendMessage(data);

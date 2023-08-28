@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AppControllerService } from './app.controller.service';
-import { Config } from './shared/models/config';
+import { AppControllerService } from './services/app.controller.service';
+import { Config } from './models/config';
 
 @Component({
   selector: 'app-root',

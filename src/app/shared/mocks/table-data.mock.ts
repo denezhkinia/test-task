@@ -1,0 +1,163 @@
+import { TableData } from '../../models/table-data';
+
+export const tableDataMock: TableData[] = [
+  {
+    id: '1',
+    int: 1,
+    float: 1.1,
+    color: 'red',
+    child: { id: 'c1', color: 'blue' },
+  },
+  {
+    id: '2',
+    int: 2,
+    float: 2.2,
+    color: 'green',
+    child: { id: 'c2', color: 'yellow' },
+  },
+  {
+    id: '3',
+    int: 3,
+    float: 3.3,
+    color: 'blue',
+    child: { id: 'c3', color: 'red' },
+  },
+  {
+    id: '4',
+    int: 4,
+    float: 4.4,
+    color: 'yellow',
+    child: { id: 'c4', color: 'green' },
+  },
+  {
+    id: '5',
+    int: 5,
+    float: 5.5,
+    color: 'red',
+    child: { id: 'c5', color: 'blue' },
+  },
+  {
+    id: '6',
+    int: 6,
+    float: 6.6,
+    color: 'green',
+    child: { id: 'c6', color: 'yellow' },
+  },
+  {
+    id: '7',
+    int: 7,
+    float: 7.7,
+    color: 'blue',
+    child: { id: 'c7', color: 'red' },
+  },
+  {
+    id: '8',
+    int: 8,
+    float: 8.8,
+    color: 'yellow',
+    child: { id: 'c8', color: 'green' },
+  },
+  {
+    id: '9',
+    int: 9,
+    float: 9.9,
+    color: 'red',
+    child: { id: 'c9', color: 'blue' },
+  },
+  {
+    id: '10',
+    int: 10,
+    float: 10.1,
+    color: 'green',
+    child: { id: 'c10', color: 'yellow' },
+  },
+  {
+    id: '11',
+    int: 11,
+    float: 11.11,
+    color: 'blue',
+    child: { id: 'c11', color: 'red' },
+  },
+  {
+    id: '12',
+    int: 12,
+    float: 12.12,
+    color: 'yellow',
+    child: { id: 'c12', color: 'green' },
+  },
+];
+
+export const idsMock: string[] = ['new-1', 'new-2'];
+
+export const tableDataMockWithNewIds: TableData[] = [
+  {
+    id: 'new-1',
+    int: 3,
+    float: 3.3,
+    color: 'blue',
+    child: { id: 'c3', color: 'red' },
+  },
+  {
+    id: 'new-2',
+    int: 4,
+    float: 4.4,
+    color: 'yellow',
+    child: { id: 'c4', color: 'green' },
+  },
+  {
+    id: '5',
+    int: 5,
+    float: 5.5,
+    color: 'red',
+    child: { id: 'c5', color: 'blue' },
+  },
+  {
+    id: '6',
+    int: 6,
+    float: 6.6,
+    color: 'green',
+    child: { id: 'c6', color: 'yellow' },
+  },
+  {
+    id: '7',
+    int: 7,
+    float: 7.7,
+    color: 'blue',
+    child: { id: 'c7', color: 'red' },
+  },
+  {
+    id: '8',
+    int: 8,
+    float: 8.8,
+    color: 'yellow',
+    child: { id: 'c8', color: 'green' },
+  },
+  {
+    id: '9',
+    int: 9,
+    float: 9.9,
+    color: 'red',
+    child: { id: 'c9', color: 'blue' },
+  },
+  {
+    id: '10',
+    int: 10,
+    float: 10.1,
+    color: 'green',
+    child: { id: 'c10', color: 'yellow' },
+  },
+  {
+    id: '11',
+    int: 11,
+    float: 11.11,
+    color: 'blue',
+    child: { id: 'c11', color: 'red' },
+  },
+  {
+    id: '12',
+    int: 12,
+    float: 12.12,
+    color: 'yellow',
+    child: { id: 'c12', color: 'green' },
+  },
+];

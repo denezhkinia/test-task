@@ -1,4 +1,4 @@
-import { ChildTableData, TableData } from '../models/table-data';
+import { ChildTableData, TableData } from '../../models/table-data';
 
 const MAX_INT: number = 10000000;
 const MAX_FLOAT: number = 1000;
@@ -12,7 +12,11 @@ addEventListener('message', ({ data }) => {
   }
 });
 
-function generateMockTableData(size: number): TableData[] {
+/**
+ * Generate mock data for table
+ * @param size The size of array to generate
+ */
+export function generateMockTableData(size: number): TableData[] {
   const mockData: TableData[] = [];
   for (let i = 0; i < size; i++) {
     mockData.push(generateRowData(ID.toString()));
@@ -21,7 +25,11 @@ function generateMockTableData(size: number): TableData[] {
   return mockData;
 }
 
-function generateRowData(id: string): TableData {
+/**
+ * Generate mock data for table row
+ * @param id The id of row
+ */
+export function generateRowData(id: string): TableData {
   return {
     id,
     int: Math.floor(Math.random() * MAX_INT),
@@ -31,15 +39,24 @@ function generateRowData(id: string): TableData {
   };
 }
 
-function generateChildTableData(id: string): ChildTableData {
+/**
+ * Generate mock data for child table.
+ * @param id The id of row
+ * @returns ChildTableData
+ */
+export function generateChildTableData(id: string): ChildTableData {
   return {
-    id,
+    id: 's-' + id,
     color: getRandomColor(),
   };
 }
 
-function getRandomColor(): string {
-  const colors = ['red', 'blue', '#03fce3', '#ca03fc', 'orange', 'purple'];
+/**
+ * Get random color
+ * @returns Random color
+ */
+export function getRandomColor(): string {
+  const colors = ['red', 'pink', '#03fce3', '#ca03fc', 'rgb(0, 0, 255)', 'hsl(120, 100%, 50%)'];
   const randomIndex = Math.floor(Math.random() * colors.length);
   return colors[randomIndex];
 }

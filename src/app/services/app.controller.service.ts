@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { PseudoSocketService } from './shared/services/pseudo-socket.service';
-import { TableData } from './shared/models/table-data';
-import { Config } from './shared/models/config';
+import { PseudoSocketService } from '../shared/services/pseudo-socket.service';
+import { TableData } from '../models/table-data';
+import { Config } from '../models/config';
 import { BehaviorSubject } from 'rxjs';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @Injectable({
   providedIn: 'root',
@@ -19,13 +18,17 @@ export class AppControllerService {
     ids: ['1'],
   };
 
-  private worker = new Worker(new URL('./shared/workers/table-view.worker', import.meta.url));
+  private worker: Worker;
   constructor(private pseudoSocketService: PseudoSocketService) {}
 
   init() {
+    if (typeof Worker !== 'undefined') {
+      this.worker = new Worker(new URL('./shared/workers/table-view.worker', import.meta.url));
+    }
+
     this.pseudoSocketService.startServer(this.config.timer, this.config.size);
 
-    this.pseudoSocketService.getMessages().subscribe((data: TableData) =>
+    this.pseudoSocketService.getMessages().subscribe((data: TableData[]) =>
       this.worker.postMessage({
         tableData: data,
         ids: this.config.ids,
@@ -33,7 +36,6 @@ export class AppControllerService {
     );
 
     this.worker.onmessage = ({ data }) => {
-      console.log('data', data);
       this.tableData$$.next(data);
     };
   }

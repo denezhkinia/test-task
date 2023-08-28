@@ -7,8 +7,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NumberDirective } from './directives/numbers-only.directive';
-import { ConfigFormComponent } from './components/config-form/config-form.component';
-import { TableComponent } from './components/table/table.component';
+import { ConfigFormComponent } from '../components/config-form/config-form.component';
+import { TableComponent } from '../components/table/table.component';
 
 @NgModule({
   declarations: [NumberDirective, ConfigFormComponent, TableComponent],

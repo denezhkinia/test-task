@@ -17,12 +17,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "es2022",
+    "module": "es2022",
     "useDefineForClassFields": false,
     "strictNullChecks": false,
     "lib": [
-      "ES2022",
+      "es2022",
       "dom"
     ]
   },

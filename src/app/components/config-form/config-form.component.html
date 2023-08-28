@@ -24,6 +24,7 @@
     </mat-chip-grid>
     <input
       placeholder="New ID..."
+      [disabled]="configForm.get('ids').value.length >= 10"
       [matChipInputFor]="idGrid"
       (matChipInputTokenEnd)="addId($event)"
     />
