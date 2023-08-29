@@ -1,0 +1,1 @@
+(()=>{"use strict";addEventListener("message",t=>{const{tableData:e,ids:a}=t.data;e&&postMessage(function n(t,e){return t.slice(Math.max(t.length-10,1)).map((a,c)=>e[c]?function o(t,e){return{...t,id:e}}(a,e[c]):a)}(e,a))})})();
