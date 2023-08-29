@@ -23,7 +23,7 @@ export class AppControllerService {
 
   init() {
     if (typeof Worker !== 'undefined') {
-      this.worker = new Worker(new URL('./shared/workers/table-view.worker', import.meta.url));
+      this.worker = new Worker(new URL('../shared/workers/table-view.worker', import.meta.url));
     }
 
     this.pseudoSocketService.startServer(this.config.timer, this.config.size);
